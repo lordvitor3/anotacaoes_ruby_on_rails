@@ -1,0 +1,34 @@
+- Adicionar o caminho da nova "classe": (config/routes):
+	- resources nome_da_classe ## esse comando irá criar caminhos para o crud da classe
+
+- criar um controlador (controllers):
+	- nome_controller.rb
+	- class NomeController < ApplicationController
+	     def new #nome da pagina
+	     	@article2 = Article2.new
+         end
+	  end
+
+- criar uma pasta (view) com o nome da classe
+	- articles2 # exemplo para a classe articles2
+        - criar um arquivo new.html.erb #para a página new
+
+- usar os metodos form_for para renderizar os forms na view
+	
+	-<%= form_for @article2 do |f| %>
+
+ <p>
+ 	<%= f.label :title %>
+ 	<%= f.text_field :title %>
+ </p>
+
+ <p>
+    <%= f.label :description%>
+    <%= f.text_area :description %>
+ </p>
+
+ <p>
+     <%= f.submit %>
+ </p>
+
+ ## ver o resto das modificações em alpha-blog (article2)

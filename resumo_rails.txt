@@ -1,0 +1,66 @@
+----- Resumo Rails ------
+
+- Criar uma nova aplicação : rails new nome_aplicação
+- bundle install: baixa e instala as gems do arquivo na aplicação
+- rails server: inicia o servidor
+- config/routes: arquivo onde estão definidas as rotas para a aplicação
+		- ex: get 'welcome/home', to:'welcome#home' ou
+		 	  root 'welcome#home'
+
+		- executar comando: rake routes
+
+- criar controlador: nome_controller
+		- class nomeController < ApplicationController
+
+
+- views: arquivos com terminação: html.erb
+	 	- qualquer código ruby deve  ser inserido dentro dos caracteres <% %>
+	 	- para que o código seja renderizado na página, acrescentar um "=" <%=  %>
+	 	- link:  <%= link_to 'texto', controller_action_path %>
+
+- scaffold: rails generate scaffold Article title:string description:text
+			rake db:migrate ### cria as tabelas no banco de dados
+			rake routes ### para definir os caminhos 
+
+- alterar tabelas no banco:
+			(opção 1) -rake db:rollback ##drop table das tabelas da aplicação
+					  -rake db:migrate
+
+			(opção 2) -rails generate migration nome_do_arquivo	### o nome não importa
+					  - dentro do metodo change inserir: add_column :nome_tabela, :nome_coluna, :tipo_coluna
+					  - ex: add_column :articles, :description, :text
+					  		add_column :articles, :create_at, :datetime
+					  - rake db:migrate
+
+- Acessando tabelas pelo console:
+		- Article.all # lista todos os artigos
+		- article = Article.find(chave_primária) # faz um select no banco pela chavev primária
+		      - modificar um artigo selecionando: article.titulo = 'texto alterado'
+		      									  article.save
+
+		      - deletar um artigo selecionado: article.destroy
+
+		- criar uma nova linha na tabela: article = Article.new
+										  article.save
+
+		- Acessando log de erros de uma variavel: Nome.erros.full_messages						  
+
+- validação: models/article.rb
+		- campos obrigatórios: 
+				validates :title, presence: true
+
+        - tamanho mínimo: 		
+        		validates :title, length {minimum: 3, maximum:50}		
+
+
+
+
+					   		  
+
+
+
+
+
+
+
+

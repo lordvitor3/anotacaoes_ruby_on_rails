@@ -1,0 +1,37 @@
+--------Comandos Github---------------
+
+- mkdir nome_pasta //cria a pasta
+
+
+//INICIAR REPOSITÓRIO
+- git init // inicia um repositório na pasta corrente
+
+- git remote add origin git@github.com:codexico/tutorial-github.git //se conecta a um repositorio
+
+- git pull origin master // baixa o projeto
+
+
+//ADICIONAR NO PROJETO
+- git add nome_arquivo // adiciona apenas um arquivo específico
+- git add . //adiciona todos os arquivos 
+
+- git commit -m "mensagem teste para o tutorial" //adiciona os arquivos do add para ocontrole de versões
+
+- git push origin master
+
+
+-Chave SSH - 
+  	Criar  chave SSH: ssh-keygen -t rsa
+	Exibir chave SSH: cat ~/.ssh/id_rsa.pub
+        
+
+-Heroku
+	heroku login
+	heroku create
+        git push heroku master
+	heroku rename nome_da_aplicação
+
+//ATUALIZAR PROJETO
+- git fetch origin
+
+

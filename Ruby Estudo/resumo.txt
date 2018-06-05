@@ -1,0 +1,5 @@
+- POO
+	- self.nome_metodo - cria um método que pode ser chamado sem a instancia de um objeto
+		ex: self.indentify_yoursef()
+
+	
